@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Docker
+.docker/
+
+# Kind
+kubeconfig
+
+# VSCode
+.vscode/
