@@ -12,14 +12,23 @@ Harness deploys to the Kind cluster on the homelab server
 
 Pipeline Flow
 
+Overview
 ![Overview](images/overview.png)
+Pipelines
 ![Pipelines](images/pipeline.png)
+Pipeline View
 ![Pipeline View](images/pipeline-deploy.png)
+Trigger
 ![Trigger](images/trigger.png)
+Executions
 ![Executions](images/execution.png)
+Services
 ![Services](images/services.png)
+Service Config
 ![Services Config](images/service-config.png)
+Environments
 ![Environments](images/env.png)
+Infrastructure Definition
 ![Infra Definitions](images/infra.png)
 
 
