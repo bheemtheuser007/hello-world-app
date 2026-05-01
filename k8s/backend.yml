@@ -15,7 +15,7 @@ spec:
       containers:
         - name: backend
           image: hello-world-app-backend:latest
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           readinessProbe:
