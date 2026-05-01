@@ -28,7 +28,7 @@ async def index():
   </style>
 </head>
 <body>
-  <h1>🐍 Hello World – Python Microservices </h1>
+  <h1>🐍 Hello World – Python Microservices Trigger </h1>
   <p class="ok">✔ Frontend is running</p>
   <h3>Response from Gateway → Backend:</h3>
   <pre>{data}</pre>
