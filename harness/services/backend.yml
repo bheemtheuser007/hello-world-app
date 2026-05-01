@@ -1,0 +1,34 @@
+service:
+  name: backend
+  identifier: backend
+  orgIdentifier: default
+  projectIdentifier: default_project
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: k8smanifests
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: bheem007
+                  gitFetchType: Branch
+                  paths:
+                    - k8s
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: yamini007
+                imagePath: yamini007/backend
+                tag: <+trigger.artifact.build>
+                digest: ""
+              identifier: backend
+              type: DockerRegistry
+    type: Kubernetes

@@ -1,0 +1,38 @@
+trigger:
+  name: docker-hello
+  identifier: dockerhello
+  enabled: true
+  tags: {}
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipelineIdentifier: helloworlddeploy
+  stagesToExecute: []
+  source:
+    type: Artifact
+    spec:
+      type: DockerRegistry
+      spec:
+        connectorRef: yamini007
+        imagePath: yamini007/backend
+        tag: <+trigger.artifact.build>
+        eventConditions:
+          - key: build
+            operator: Regex
+            value: .*
+  inputSetBranchName: main
+  inputYaml: |
+    pipeline:
+      identifier: helloworlddeploy
+      stages:
+        - stage:
+            identifier: deploy
+            type: Deployment
+            spec:
+              service:
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: backend

@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: kind-infra
+  identifier: kindinfra
+  orgIdentifier: default
+  projectIdentifier: default_project
+  environmentRef: kindcluster
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: kindk8s
+    namespace: default
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false

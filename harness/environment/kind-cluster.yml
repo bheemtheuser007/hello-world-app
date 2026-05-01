@@ -1,0 +1,7 @@
+environment:
+  name: kind-cluster
+  identifier: kindcluster
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: default_project
