@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: hello-world-app-gateway:latest
+          image: yamini007/gateway:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
